@@ -99,7 +99,7 @@ void drawIceCream(struct IceCream menu[], struct Order order) {
 
     // draw sprinkles on top if they wanted them
     if (order.sprinkles) {
-        printf("    '.*.'.*\n");
+        printf("    '******\n");
     }
 
     // top of the ice cream
@@ -200,7 +200,7 @@ int main() {
     printf("Your change: $%.2f\n", change);
 
     // say thanks and show every ice cream they ordered
-    printf("\nHere are your %d ice cream(s) %s, have a nice day!\n\n", howMany, name);
+    printf("\nHere are your %d ice creams %s, have a nice day!\n\n", howMany, name);
     for (int i = 0; i < howMany; i++) {
         drawIceCream(menu, orders[i]);
     }
