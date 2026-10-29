@@ -99,7 +99,7 @@ void drawIceCream(struct IceCream menu[], struct Order order) {
 
     // draw sprinkles on top if they wanted them
     if (order.sprinkles) {
-        printf("    '******\n");
+        printf("    ******\n");
     }
 
     // top of the ice cream
@@ -107,7 +107,7 @@ void drawIceCream(struct IceCream menu[], struct Order order) {
 
     // draw one scoop for each scoop ordered
     for (int s = 0; s < order.scoops; s++) {
-        printf("    {     }\n");
+        printf("    {_____}\n");
     }
 
     // draw the bottom part: a cone or a cup
@@ -167,11 +167,11 @@ int main() {
         orders[i].scoops = removeInvalidChoice("How many scoops? [1-3]: ", 1, maxScoops);
 
         // ask about sprinkles
-        orders[i].sprinkles = getYesOrNo("What do you think of  sprinkles? (y OR n): ");
+        orders[i].sprinkles = getYesOrNo("What do you think of  sprinkles? (y / n): ");
 
         // ask cup or cone 
-        printf("1. Cup  (+$%.2f)\n", cupPrice);
-        printf("2. Cone (+$%.2f)\n", conePrice);
+        printf("1. Cup  ($%.2f)\n", cupPrice);
+        printf("2. Cone ($%.2f)\n", conePrice);
         orders[i].cone = (removeInvalidChoice("Cup or cone? (1-2): ", 1, 2) == 2);
 
     // calculate the price of this ice cream and add it to the total bill
